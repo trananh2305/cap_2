@@ -163,7 +163,7 @@ const TableDetailForChef = () => {
                     {order.status === STATUS.PROCESSING && (
                       <button
                         onClick={() =>
-                          handleUpdateOrderStatus(STATUS.COMPLETED, [order._id])
+                          order._id && handleUpdateOrderStatus(STATUS.COMPLETED, [order._id])
                         }
                         className="bg-green-500 hover:bg-yellow-600 text-white px-3 py-1 rounded-xl whitespace-nowrap"
                       >
@@ -186,7 +186,7 @@ const TableDetailForChef = () => {
           <SelectChef
             setIsModalOpenChef={setIsModalOpenChef}
             order={{
-              orderItemIds: [selectedOrder._id],
+              orderItemIds: selectedOrder._id ? [selectedOrder._id] : [],
             }}
           />
         )}
