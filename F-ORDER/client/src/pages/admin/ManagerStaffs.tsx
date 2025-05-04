@@ -1,6 +1,6 @@
 // Ensure you're importing the correct Staff type
 import { useState, useEffect } from "react";
-import { Search, Trash2, Eye, X } from "lucide-react";
+import { Search, Trash2, Eye } from "lucide-react";
 import {
   Staff,
   useDeleteStaffMutation,
@@ -24,7 +24,7 @@ const ManagerStaffs = () => {
   const [showModal, setShowModal] = useState(false);
   const [staffs, setStaffs] = useState<Staff[]>([]); // Properly typed state for Staff
   const { data, isLoading, isSuccess } = useGetAllStaffQuery();
-  const [deleteStaff, { isSuccess: isDeleteSucces }] = useDeleteStaffMutation();
+  const [deleteStaff] = useDeleteStaffMutation();
   const [currentPage, setCurrentPage] = useState(0);
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -57,11 +57,8 @@ const ManagerStaffs = () => {
     setShowModal(true);
   };
 
-  console.log(selectedStaff, "selected staff");
-  const handleDeleteStaff = (id: string) => {
-    // Add the delete staff API call here
-    console.log(`Delete staff with ID: ${id}`);
-  };
+
+
 
   if (isLoading) {
     return <div>Loading...</div>;

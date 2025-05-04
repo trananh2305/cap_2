@@ -8,14 +8,10 @@ import {
   TableRow,
 } from "../../ui/Table";
 
-interface DishFavourite {
-  tenMonAn: string;
-  loaiMonAn: string;
-  soLuotDat: number;
-}
+
 
 const TopDishFavourite = () => {
-  const { data, isLoading } = useGetItemsBestSaleQuery();
+  const { data } = useGetItemsBestSaleQuery();
 
   return (
     <Table className="mt-5">

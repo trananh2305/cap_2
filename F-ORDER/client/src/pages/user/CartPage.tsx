@@ -53,7 +53,7 @@ const CartPage = () => {
   }, [isSuccess, isError, data]);
 
   const handleSubmid = () => {
-    console.log("orderItem", orderItems);
+
     if (!userId) {
       toast.error("Vui lòng đăng nhập!");
       return;

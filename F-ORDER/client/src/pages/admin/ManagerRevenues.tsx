@@ -19,7 +19,7 @@ const ManagerRevenues = () => {
   const [error, setError] = useState("");
 
   // Pass an object containing startDate and endDate
-  const { data, isLoading, isError, isSuccess, refetch } =
+  const { data, isLoading, isError, isSuccess } =
     useGetOrderStartEndQuery({
       startDate,
       endDate,

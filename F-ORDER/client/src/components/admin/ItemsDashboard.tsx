@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 
 const ItemsDashboard = () => {
-  const { data, isLoading } = useGetAllRevenueQuery();
+  const { data } = useGetAllRevenueQuery();
 
   const revenueData = data?.result;
 

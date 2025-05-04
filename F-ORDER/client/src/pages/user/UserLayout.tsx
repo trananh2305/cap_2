@@ -4,7 +4,6 @@ import { Outlet } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 import Logo from "@/icons/Logo";
-import { MessageCircleMore } from "lucide-react";
 import ChatBoxUi from "./ChatboxUi";
 import { useState } from "react";
 import { useUserInfo } from "@/hook/auth";

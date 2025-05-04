@@ -24,11 +24,11 @@ ChartJS.register(
 );
 
 const FiguresPostChart = () => {
-  const [year, setYear] = useState<string | null>("");
+  const [year] = useState<string | null>("");
 
   // Provide a fallback year (e.g., current year) if `year` is null or empty
   const currentYear = year || new Date().getFullYear().toString();
-  const { data, isLoading } = useGetOrderCountMonthlyQuery({
+  const { data } = useGetOrderCountMonthlyQuery({
     year: currentYear,
   });
 

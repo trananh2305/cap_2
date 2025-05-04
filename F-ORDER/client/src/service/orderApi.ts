@@ -6,7 +6,7 @@ export interface OrderItem {
   quantity: number;
   price: number | GetPrice;
   status?: "PENDING" | "PROCESSING" | "COMPLETED";
-  _id: string;
+  _id?: string;
   note?: string;
   createdAt?: string;
   updatedAt?: string;

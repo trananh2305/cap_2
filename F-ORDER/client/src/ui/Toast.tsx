@@ -1,4 +1,4 @@
-import {addToast, ToastProvider, Button} from "@heroui/react";
+import { ToastProvider, Button} from "@heroui/react";
 
 const Toast = () => {
   return (
@@ -16,13 +16,13 @@ const Toast = () => {
         <Button
           key={position[1]}
           variant={"flat"}
-          onPress={() => {
-            setPlacement(position[1]);
-            addToast({
-              title: "Toast title",
-              description: "Toast displayed successfully",
-            });
-          }}
+          // onPress={() => {
+          //   setPlacement(position[1]);
+          //   addToast({
+          //     title: "Toast title",
+          //     description: "Toast displayed successfully",
+          //   });
+          // }}
         >
           {position[0]}
         </Button>

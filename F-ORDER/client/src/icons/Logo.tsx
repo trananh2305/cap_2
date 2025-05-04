@@ -1,15 +1,19 @@
 const Logo = ({
   className,
   fill="black",
+  width="127",
+  height="34"
 }: {
-  className: string;
-  fill: string;
+  className?: string;
+  fill?: string;
+  height?:string;
+  width?: string;
 }) => {
   return (
     <svg
       className={className}
-      width="127"
-      height="34"
+      width={width}
+      height={height}
       viewBox="0 0 127 34"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

@@ -41,7 +41,7 @@ const ManagerForChef = () => {
     try {
       console.log(`Sending request to update order ${_id} to ${newStatus}`);
       const response = await getUpdateOrderStatus({
-        id: _id,
+        orderItemIds: [_id],
         status: newStatus,
       }).unwrap();
       console.log("Response from server:", response);

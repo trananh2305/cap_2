@@ -1,4 +1,4 @@
-import FiguresPostChart from "../../components/admin/FiguresPostChart";
+
 import ItemsDashboard from "../../components/admin/ItemsDashboard";
 import RevenueChart from "../../components/admin/RevenueChart";
 import TopDishFavorite from "../../components/admin/TopDishFavourite";
