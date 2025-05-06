@@ -24,7 +24,7 @@ let io: Server | null = null; // Biến io toàn cục
 export function setupSocket(server: any): void {
   io = new Server(server, {
     cors: {
-      origin: [process.env.URL_CLIENT || "https://forder-one.vercel.app"], // Chỉ định CORS
+      origin: ["https://forder-one.vercel.app"], // Chỉ định CORS
       methods: ["GET", "POST"],
     },
   });
@@ -35,7 +35,6 @@ export function setupSocket(server: any): void {
 
   io.on("connection", (socket: Socket) => {
     console.log(`🔌 User connected: ${socket.id}`);
-    
 
     setTimeout(() => {
       if (io) {
@@ -47,18 +46,21 @@ export function setupSocket(server: any): void {
     connectedUsers[socket.id] = socket.id;
     socket.on("user_message", async (data: UserMessageData) => {
       console.log(`📩 Nhận tin nhắn từ ${data.user}:`, data.message);
-  
+
       try {
         // Gọi hàm AI để lấy phản hồi
         const reply = await generateAIResponse(data.user, data.message);
-  
+
         // Gửi phản hồi về client
         socket.emit("ai_reply", {
           user: "AI",
           message: reply || "Xin lỗi, tôi không hiểu.",
         } as AIReplyData);
       } catch (error) {
-        console.error("❌ Lỗi AI:", error instanceof Error ? error.message : "Unknown error");
+        console.error(
+          "❌ Lỗi AI:",
+          error instanceof Error ? error.message : "Unknown error"
+        );
         socket.emit("ai_reply", {
           user: "AI",
           message: "Xin lỗi, hệ thống đang gặp lỗi!",
@@ -76,7 +78,9 @@ export function setupSocket(server: any): void {
 // ✅ Hàm lấy instance của io, đảm bảo không bị undefined
 export function getIo(): Server {
   if (!io) {
-    throw new Error("Socket.io chưa được khởi tạo! Hãy gọi setupSocket(server) trước.");
+    throw new Error(
+      "Socket.io chưa được khởi tạo! Hãy gọi setupSocket(server) trước."
+    );
   }
   return io;
 }
