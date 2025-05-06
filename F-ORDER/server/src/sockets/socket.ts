@@ -24,7 +24,7 @@ let io: Server | null = null; // Biến io toàn cục
 export function setupSocket(server: any): void {
   io = new Server(server, {
     cors: {
-      origin: [process.env.URL_CLIENT || "http://localhost:5173"], // Chỉ định CORS
+      origin: [process.env.URL_CLIENT || "https://forder-one.vercel.app"], // Chỉ định CORS
       methods: ["GET", "POST"],
     },
   });

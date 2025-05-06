@@ -20,7 +20,7 @@ class App {
 
   private configureMiddlewares(): void {
     this.app.use(cors({
-      origin: process.env.URL_CLIENT || "http://localhost:5173",
+      origin: process.env.URL_CLIENT || "https://forder-one.vercel.app",
       credentials: true,
       optionsSuccessStatus: 200,
     }));
