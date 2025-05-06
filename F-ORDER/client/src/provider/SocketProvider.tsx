@@ -3,7 +3,7 @@ import { ReactNode, createContext, useContext, useEffect } from "react";
 import { io } from "socket.io-client";
 
 //connect to server
-export const socket = io("http://localhost:8080", {
+export const socket = io("https://f-order-production.up.railway.app", {
   autoConnect: false,
 //   path: "/v1/we-connect/socket.io",
 });

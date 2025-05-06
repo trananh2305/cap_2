@@ -44,7 +44,7 @@ export interface RegisterFormData {
 }
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: "http://localhost:8080",
+  baseUrl: "https://f-order-production.up.railway.app",
   prepareHeaders: (headers, { getState }) => {
     const token = (getState() as RootState).auth.accessToken;
     if (token) {
